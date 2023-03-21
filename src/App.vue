@@ -1,30 +1,58 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <nav>
+      <h1>Pagina principal</h1>
+      <section>
+        <router-link to="/" class="link">Listas</router-link>
+        <router-link to="/detail" class="link">Details</router-link>
+      </section>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'App'
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0%;
+  padding: 0%;
 }
 
-nav {
-  padding: 30px;
+html,
+body {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+nav{
+  width: 100%;
+  height: 60px;
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+nav section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: .5%;
+  width:30%;
+  margin-left: 35%;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
 }
 </style>
