@@ -4,7 +4,8 @@
       <h1>Pagina principal</h1>
       <section>
         <router-link to="/" class="link">Listas</router-link>
-        <router-link to="/detail" class="link">Details</router-link>
+        <router-link to="/object" class="link">Objetos</router-link>
+        <router-link to="/class" class="link">Clases</router-link>
       </section>
     </nav>
     <router-view></router-view>
@@ -54,5 +55,8 @@ nav section{
 .link{
   text-decoration: none;
   color: white;
+}
+.link:hover{
+  text-decoration: underline;
 }
 </style>

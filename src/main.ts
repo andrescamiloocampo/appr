@@ -30,11 +30,18 @@ import App from './App.vue'
 import store from './store'
 // import home from './components/home.vue'
 import home from '@/components/home.vue'
-import detail from '@/components/detalles.vue'
+import object from '@/components/objetos.vue'
+import clases from '@/components/clases.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const Home = home
-const Detail = detail
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+library.add(faUserSecret)
+
+const Home = home,
+Object = object,
+Clases = clases 
 
 const routes = [
   {
@@ -42,8 +49,12 @@ const routes = [
     component: Home
   },
   {
-    path: '/detail',
-    component: Detail
+    path: '/object',
+    component: Object
+  },
+  {
+    path: '/class',
+    component:Clases
   }
 ]
 
@@ -53,6 +64,7 @@ const vueRouter = createRouter({
 })
 
 const app = createApp(App)
+  .component('font-awesome-icon', FontAwesomeIcon)
   .use(store)
   .use(vueRouter)
   .mount('#app')
